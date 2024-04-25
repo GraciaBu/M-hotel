@@ -7,7 +7,7 @@ import ReactDOM from "react-dom/client";
 export default function signin(){
    
         return(
-<main className=" bg-fixed bg-cover bg-red-50 justify-item-center"style={{       
+<main className=" bg-fixed bg-cover bg-red-50"style={{       
         width:`100%`,
         height:`100%`,
         border:`none`,
@@ -35,13 +35,13 @@ export default function signin(){
          <a href="#" className="text-decoration-none font-sans text-sm gap-3 align-content-right">Forget password?</a> 
         </div>
         <button className="bg-orange-600 px-12 py-1.5 rounded-sm font-bold text-sm text-white">Sign In</button>
-<div className="flex flex-row gap-4 text-orange-600 font-bold  text-sm border-2 border-orange-600 px-12 py- rounded-sm bg-white">
+<div className="flex flex-row gap-4 text-orange-600 font-bold  text-xs border-2 border-orange-600 px-12 py- rounded-sm bg-white">
     <img src="flat-color-icons_google.svg" alt="google" className="align-content-start mr-50 "/>
 <button>Sign in with Google</button>
 </div>
-<button className="text-orange-600 text-sm border-2 font-bold  border-orange-600 px-12  rounded-sm bg-white">Sign In with Facebook</button>
+<button className="text-orange-600 text-xs border-2 font-bold  border-orange-600 px-12  rounded-sm bg-white">Sign In with Facebook</button>
 </div></div>
-<div className= " flex flex-col  gap-12 text-black font-sans h-50  py-60  px-20 w-3/4 bg-contain"style={{
+<div className= " flex flex-col  gap-12   h-50  py-60  px-20 w-3/4 bg-contain"style={{
         backgroundImage:`url('sign.png')`,
         backgroundRepeat:`no-repeat`,
        
