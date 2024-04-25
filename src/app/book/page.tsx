@@ -6,8 +6,9 @@ import Backgroundimage from "material-symbols-calendar-month-rounded.svg";
 
 export default function Home() {
   return (
-    <main className="bg-fixed bg-cover h-full"style={{
-      backgroundImage:`url('/home.svg')`,
+<main>
+    <div className="bg-fixed bg-contain "style={{
+      backgroundImage:`url('/swimming pool.svg')`,
        height:`100%`,
       width:`100%`,
       backgroundRepeat:`no-repeat`,
@@ -18,29 +19,16 @@ export default function Home() {
       }}>
 
       
-<nav className="flex flex-row    py-7 ">
-        <p className="font-bold font-sans text-white h-9 ml-5"> 
-          M-hotel
-          </p>
-          <a href="/book" className="bg-orange-500 text-white font-sans  w-1/7
-           rounded-md py-2 px-5  ml-auto mr-10 font-bold text-decoration-none">Sign In</a>
-
-  </nav>
-
-  
 
 
-<div className="my-20 mx-20 ">
-<p className="font-extrabold font-sans text-white  text-5xl ">Best affordable</p>
-   <p className="font-extrabold font-sans text-white  text-5xl ">accomodations ever!</p>
-</div>
-  <div className="my-12 mx-20">
-  <p className="text-white   font-sm text-2xl">For sure you have made the right choice to</p>
-  <p className=" text-white  text-2xl font-sm "> save your reservation here!</p>
-  </div>
+  <p className="font-sans text-white text-xl font-bold p-20">Barefoot</p>
+
+
+
+
   
   <div className=" flex flex-row  gap-10 text-black font-sans h-15 w-5/6   bg-white 
-  rounded-md mx-20 p-5 ">
+  rounded-md mx-20 p-3 ">
     
 <div className=" w-1/4 text-sm font-sans grid grid-col gap-2">
 <p className="font-bold">Type</p>
@@ -81,9 +69,42 @@ export default function Home() {
 
 <button className="bg-orange-600 p-4 rounded-md w-1/4 font-bold text-white">Search</button>
   </div>
+ </div>
+ <div className="  bg-red-50 mb-100 p-5"style={{       
+        width:`100%`,
+        height:`400px`,
+        border:`none`,
+}}>
+<div className="h-30  bg-white rounded-sm p-2" style={{
+    width:`350px`,
+    height:`350px`,
+    border:`none`,
+}}>
+    <img src="pool.png" alt="photo" className="bg-contain w-full"/>
+    <p className="font-bold text-sm p-2 ">kigali New Dawn city</p>
+    <div className="flex flex-row gap-2 1/4 text-sm text-slate-400 py-2">
+    <img src="vector.svg" alt="icon" className="align-left"/>
+        <label>6 Rooms</label>
+        <img src="vector(1).svg" alt="icon" className="align-left"/>
+        <label>1O ffice</label>
+        <img src="vector(3).svg" alt="icon" className="align-left"/>
+        <label>2 bahts</label>
+        <img src="vector(5).svg" alt="icon" className="align-left"/>
+        <label>1 kichten</label></div>
+        <div className="flex flex-row 1/3    bg-white rounded-md w-20 h-10">
+<div className="flex flex-row text-sm border-2 border-grey-500 w-40 rounded-md ">            
+<button className="flex  bg-blue-500 ">
+    <img src="mdi_like.svg" alt="icon"/>260
+</button> 
+<button className="px-3"><img src="mdi_dislike.svg" alt="icon"/></button>
+</div>
+<button className="text-white font-sans text-sm py-2 px-3 rounded-md bg-orange-500 align-right">Book now</button>
+    </div>
+</div>
+ </div>
+
+</main>
   
-  
-  </main>
   );
 }
 
