@@ -22,7 +22,7 @@ export default function Home() {
         <p className="font-bold font-sans text-white h-9 ml-5"> 
           M-hotel
           </p>
-          <a href="/book" className="bg-orange-500 text-white font-sans  w-1/7
+          <a href="/signin" className="bg-orange-500 text-white font-sans  w-1/7
            rounded-md py-2 px-5  ml-auto mr-10 font-bold text-decoration-none">Sign In</a>
 
   </nav>

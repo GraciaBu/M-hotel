@@ -48,12 +48,12 @@ export default function signin(){
  <img src="entypo_eye(1).svg" alt="eye" className="bg-contain align-item-right"/></div>
 <p className="text-xsm text-slate-300 p-3">Agree with Terms and Conditions</p>
 
-<button className="bg-orange-600 px-12 py-1 rounded-sm text-xs font-bold text-white">Sign Up</button>
+<button className="bg-orange-600 px-12 py-2 rounded-sm text-xs font-bold text-white">Sign Up</button>
 <div className="flex flex-row text-orange-600 text-xs border-2 font-bold border-orange-600  px-12 py-1 rounded-sm bg-white">
     <img src="flat-color-icons_google.svg" alt="google" className="align-content-right"/>
-<button>Sign Up with Facebook</button>
+<button>Sign Up with Google</button>
 </div>
-<button className="text-orange-600 text-sm border-2 border-orange-600 font-bold px-12 py-1 rounded-sm bg-white">Sign Up with</button>
+<button className="text-orange-600 text-xs border-2 border-orange-600 font-bold px-12 py-2 rounded-sm bg-white">Sign Up with facebook</button>
     </div>
     </div>           
 <div className= " flex flex-col   h-45 w-3/6 my-7 bg-contain "style={{
