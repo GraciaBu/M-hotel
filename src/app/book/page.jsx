@@ -62,13 +62,13 @@ export default function Home() {
     description:"",
     
   });
-  const[accomodations,setAccomodations]=useState(data);
+  const[accomodations,setAccomodations]=useState([]);
   const handleInputChange = (e) => {
 
     const name = e.target.name;
         const value = e.target.value;
      
-        setAccomodations((prevFormData) => ({
+        setAccomodation((prevFormData) => ({
           ...prevFormData,
           [name]: value,
 
@@ -78,6 +78,8 @@ export default function Home() {
       }
       const handleSubmit = (e) => {
         e.preventDefault();
+        console.log('data',accomodations);
+        console.log('accomodation',accomodation);
         setAccomodations(prevData => [...prevData, accomodation]);
         setAccomodation({
     name: "",
@@ -89,7 +91,7 @@ export default function Home() {
     description:"",
           
         });
-      };
+     console.log('accomodations',accomodations); };
   
   
   const[name,setName]=useState(data.name);
@@ -192,7 +194,7 @@ export default function Home() {
     height:`550px`,
     width:`470px`,
   }} onSubmit={handleSubmit}>
-<p className="font-bold text-lg p-6">Create Accomodation</p>
+<p className="font-bold text-lg p-3">Create Accomodation</p>
 <div className="p-5"><p>Type</p>
 <select className="w-10 border border-slate-300 bg-white text-sm  text-slate-400  py-1 rounded-sm">
   <option value="1">Motel</option>
@@ -204,7 +206,7 @@ export default function Home() {
 <input type="text" placeholder="Enter your name"
 value={accomodation.name}
 onChange={handleInputChange}
-name="accomodation"
+name="name"
 className="rounded-sm border text-grey-300 border-grey-400 py-1 px-4"/>
 </div>
 <div className="p-3"><p>Description</p>
@@ -234,7 +236,7 @@ className="rounded-sm border text-grey-300 border-grey-400 py-1 px-4"/>
   <div>
     <p>baths</p>
     <input type="text" placeholder="baths"
-    name="bath"
+    name="baths"
     value={accomodation.baths}
     onChange={handleInputChange}
     className="rounded-sm border text-grey-300 border-grey-400 p-2"/>
@@ -269,9 +271,9 @@ className="rounded-sm border text-grey-300 border-grey-400 py-1 px-4"/>
   </form>
  </div>
  <p className="p-4 font-sans text-slate-400">4 hotels found</p>
-<div className="flex flex-row gap-7 ">
+<div className="grid grid-cols-4 gap-7 ">
 
-     {data.map((hotel)=>{
+     {accomodations.map((hotel)=>{
   return(
   <Component hotel={()=>{booking(hotel)}} name={hotel.name} kitchen={hotel.kitchen} room={hotel.rooms} bath={hotel.bath}
   office={hotel.office}/>
