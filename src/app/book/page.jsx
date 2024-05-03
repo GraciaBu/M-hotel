@@ -281,10 +281,11 @@ className="rounded-md w-full border text-grey-300 border-grey-400 p-1 "/>
  <p className="p-4 font-sans text-slate-400">4 hotels found</p>
 <div className="grid grid-cols-4 gap-7 ">
 
-     {accomodations.map((hotel)=>{
+     {accomodations.map((hotel,i)=>{
   return(
+<div key={i}>
   <Component hotel={()=>{booking(hotel)}} name={hotel.name} kitchen={hotel.kitchen} rooms={hotel.rooms} bath={hotel.baths}
-  office={hotel.office}/>
+  office={hotel.office}/></div>
   
   )
 })}
