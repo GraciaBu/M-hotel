@@ -11,47 +11,38 @@ import {useState} from "react";
 
 export default function Home() {
 
-  const data=[{
-    id:1,
-    name:'Kigali new Dawn city',
-    rooms:'rooms',
-    baths:'bath',
-    kitchen:'kitchen',
-    office:'office',
-    likes:0,
-    dislike:0,
-    
-  },
+  const data=[
   {
     id:1,
     name:'Kigali new Dawn city',
-    rooms:'rooms',
-    baths:'bath',
-    kitchen:'kitchen',
-    office:'office',
+    rooms:'2',
+    baths:'2',
+    kitchen:'2',
+    office:'2',
     likes:0,
     dislike:0,
   },
   {
-    id:1,
-    name:'Kigali new Dawn city',
-    rooms:'rooms',
-    baths:'bath',
-    kitchen:'kitchen',
-    office:'office',
+    id:2,
+    name:' Dawn city',
+    rooms:'2',
+    baths:'2',
+    kitchen:'2',
+    office:'2',
     likes:0,
     dislike:0,
   },
   {
-    id:1,
-    name:'Kigali new Dawn city',
-    rooms:'rooms',
-    baths:'bath',
-    kitchen:'kitchen',
-    office:'office',
+    id:3,
+    name:'Selena',
+    rooms:'2',
+    baths:'2',
+    kitchen:'2',
+    office:'2',
     likes:0,
     dislike:0,
-  }];
+  }
+];
   const[accomodation,setAccomodation]=useState({
     name:"",
     rooms:"",
@@ -62,7 +53,7 @@ export default function Home() {
     description:"",
     
   });
-  const[accomodations,setAccomodations]=useState([]);
+  const[accomodations,setAccomodations]=useState(data);
   const handleInputChange = (e) => {
 
     const name = e.target.name;
@@ -91,7 +82,9 @@ export default function Home() {
     description:"",
           
         });
-     console.log('accomodations',accomodations); };
+     console.log('accomodations',accomodations); 
+     setShowForm(false);
+    };
   
   
   const[name,setName]=useState(data.name);
@@ -113,8 +106,9 @@ export default function Home() {
   
   }
   const booking=(book)=>{
-    setDiv(book);
+    setDiv(data);
   }
+const[showForm,setShowForm]=useState(false);
 
 
   return (
@@ -144,7 +138,7 @@ export default function Home() {
     
 <div className=" w-1/4 text-sm font-sans grid grid-col gap-2">
 <p className="font-bold">Type</p>
-<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  py-1 rounded-sm">
+<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  p-2 rounded-sm">
   <option value="1">Motel</option>
   <option value="2">Hotel</option>
   <option value="3">bar</option>
@@ -154,7 +148,7 @@ export default function Home() {
 <div className=" w-1/4 bg-white grid grid-col-1 gap-2">
 
 <p className="font-bold">Location</p>
-<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  py-1 rounded-sm">
+<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  p-2 rounded-sm">
 
   <option value="1">Kigali city</option>
   <option value="2">Bujumbura</option>
@@ -167,14 +161,14 @@ export default function Home() {
 <div className=" w-1/4 bg-white grid grid-col-1 gap-2  ">
 
 <p className="font-bold">Check In:</p>
-<div className="w-full border border-slate-300 bg-white text-sm flex flex-row gap-2 text-slate-400 px-4 py-1 rounded-sm">
+<div className="w-full border border-slate-300 bg-white text-sm flex flex-row gap-2 text-slate-400 px-4 p-2 rounded-sm">
 <input type="date" name="date" className="align-item-start"/>
 </div>
 </div>
 <div className=" w-1/4 bg-white grid grid-col-1 gap-2 ">
 
 <p className=" font-bold ">Check Out:</p>
-<div className="w-full border border-slate-300 bg-white text-sm flex flex-row gap-2 px-4 text-slate-400  py-1 rounded-sm">
+<div className="w-full border border-slate-300 bg-white text-sm flex flex-row gap-2 px-4 text-slate-400  p-2 rounded-sm">
 <input type="date" name="date" className="align-item-start"/>
 </div>
 </div>
@@ -183,99 +177,113 @@ export default function Home() {
   </div>
  </div>
 
- 
  <div className="w-full bg-red-50  p-5   border gap-7">
   <div className="flex justify-end">
  
- <button className="bg-orange-600 py-2 px-11 rounded-md w-1/4  text-white ">add accomodation</button>
+ <button className="bg-orange-600 py-2 px-11 rounded-md w-1/4  text-white " onClick={()=>setShowForm(true)}>add accomodation</button>
  </div>
- <div className="w-50 p-8">
-  <form className="bg-white font-sans text-sm  "style={{
-    height:`550px`,
-    width:`470px`,
+ {showForm&&( <div className="w-50 p-5">
+  <form className="bg-white font-sans text-sm p-7 "style={{
+    height:`555px`,
+    width:`450px`,
   }} onSubmit={handleSubmit}>
 <p className="font-bold text-lg p-3">Create Accomodation</p>
-<div className="p-5"><p>Type</p>
-<select className="w-10 border border-slate-300 bg-white text-sm  text-slate-400  py-1 rounded-sm">
+<div className="p-2"><p className="p-2">Type</p>
+<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  p-1 rounded-md">
+
   <option value="1">Motel</option>
   <option value="2">Hotel</option>
   <option value="3">bar</option>
   <option value="4">restaurant</option>
 </select></div>
-<div className="p-3"><p>Name</p>
+<div className="p-2 "><p className="p-2">Name</p>
 <input type="text" placeholder="Enter your name"
 value={accomodation.name}
 onChange={handleInputChange}
 name="name"
-className="rounded-sm border text-grey-300 border-grey-400 py-1 px-4"/>
+className="rounded-md w-full border text-grey-300 border-grey-400 p-1 "/>
 </div>
-<div className="p-3"><p>Description</p>
+<div className="p-2"><p className="p-2">Description</p>
 <input type="text" placeholder="Enter your description"
 value={accomodation.description}
 name="description"
 onChange={handleInputChange}
-className="rounded-sm border text-grey-300 border-grey-400 py-1 px-4"/>
+className="rounded-md w-full border text-grey-300 border-grey-400 p-1 "/>
 </div>
-<div className="p-3"><p>PRICE IN DOLLARS</p>
+<div className="p-2"><p className="p-2 text-sm">PRICE IN DOLLARS</p>
 <input type="text" placeholder="PRICE IN DOLLARS"
 value={accomodation.price}
 onChange={handleInputChange}
 name="price"
-className="rounded-sm border text-grey-300 border-grey-400 py-1 px-4"/>
+className="rounded-md w-full border text-grey-300 border-grey-400 p-1 "/>
 </div>
-<div className="flex flex-row w-1/5 w-20 gap-4">
-  <div>
-    <p>rooms</p>
-    <input type="text" placeholder="rooms"
+<div className="flex flex-row w-1/10 w-20 gap-2">
+  <div className="">
+    <p className="p-2">rooms</p>
+    <div className="rounded-md border flex  border-grey-400 py-5 px-10 w-10">
+      <input type="text" placeholder="rooms"
     name="rooms"
     value={accomodation.rooms}
     onChange={handleInputChange}
-    className="rounded-sm border text-grey-300 border-grey-400 p-2"/>
+    className="outline-none border-none justify-center mr-10 bg-transparent text-grey-300"/></div>
 
   </div>
-  <div>
-    <p>baths</p>
+  <div className="">
+    <p className="p-2">baths</p>
+    <div className="rounded-md border flex  border-grey-400 py-5 px-10 w-10">
+
     <input type="text" placeholder="baths"
     name="baths"
     value={accomodation.baths}
     onChange={handleInputChange}
-    className="rounded-sm border text-grey-300 border-grey-400 p-2"/>
+    className=" text-grey-300 outline-none border-none bg-transparent"/></div>
     
   </div>
-  <div>
-    <p>kitchen</p>
+  <div className="">
+    <p className="p-2">kitchen</p>
+    <div className="rounded-md border flex  border-grey-400 py-5 px-10 w-10">
+
     <input type="text" placeholder="kitchen"
     name="kitchen" 
     value={accomodation.kitchen}
     onChange={handleInputChange}
-    className="rounded-sm border text-grey-300 border-grey-400 p-2"/>
+    className=" text-grey-300 outline-none mr-30 border-none bg-transparent"/></div>
     
   </div>
-  <div>
-    <p>office</p>
+  <div className="">
+    <p className="p-2">office</p>
+    <div className="rounded-md border flex  border-grey-400 py-5 px-10 w-10">
+
     <input type="text" 
     name="office"
+    placeholder="office"
     value={accomodation.office}
     onChange={handleInputChange}
-    className="rounded-sm border text-grey-300 border-grey-400 p-2"/>
+    className=" text-grey-300 outline-none  border-none bg-transparent"/></div>
     
   </div>
   
 </div>
 
-<div className="flex flex-row gap-10 p-5">
-  <input type="submit"  className="bg-green-500 text-white rounded-sm font-bold py-2 px-5" value="save"
+<div className="flex flex-row gap-20 px-10 py-2">
+  <input type="submit"  className="bg-orange-600 text-white rounded-sm font-bold py-2 px-6" value="save"
   onChange={handleInputChange}
   />
-  <button className="bg-red-500 font-bold text-white rounded-sm py-2 px-5 flex justify-end">cancel</button></div>
+  <div className="flex">
+  <button className="font-bold text-white rounded-sm py-2 px-6  justify-right"
+  style={{backgroundColor:`#FF0202`,}}
+  onClick={()=>setShowForm(false)}
+  >cancel</button></div></div>
   </form>
- </div>
+ </div>)}
+
+
  <p className="p-4 font-sans text-slate-400">4 hotels found</p>
 <div className="grid grid-cols-4 gap-7 ">
 
      {accomodations.map((hotel)=>{
   return(
-  <Component hotel={()=>{booking(hotel)}} name={hotel.name} kitchen={hotel.kitchen} room={hotel.rooms} bath={hotel.bath}
+  <Component hotel={()=>{booking(hotel)}} name={hotel.name} kitchen={hotel.kitchen} rooms={hotel.rooms} bath={hotel.baths}
   office={hotel.office}/>
   
   )

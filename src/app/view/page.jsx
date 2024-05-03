@@ -21,9 +21,13 @@ export default function Home() {
 
       
 
+<div className="flex flex-row  w-full p-20">
+  <p className="font-sans text-white text-xl font-bold ">Barefoot</p>
+  <div className="flex justify-end ">
+<img src="Ellipse 47.svg" alt="profile" className="h-20 w-20 ml-40 p-0 "/>
+</div>
 
-  <p className="font-sans text-white text-xl font-bold p-20">Barefoot</p>
-
+  </div>
 
 
 
@@ -71,9 +75,29 @@ export default function Home() {
 <button className="bg-orange-600 p-4 rounded-md w-1/4 font-bold text-white">Search</button>
   </div>
  </div>
- <div className="w-full bg-red-50 gap-17 p-5 h-50 flex border  flex-row gap-4"></div>
- 
-
+ <div className="w-full bg-red-50 gap-17 p-5 h-auto flex ">
+ <div className=" w-full flex flex-row gap-20 h-50 p-10">
+<div style={{height:`400px`,width:`400px`,}}>
+  <img src="Rectangle 2834.svg" alt="photo" className="bg-contain" />
+</div>
+<div className="justify-right p-4 mt-10">
+  <p className="font-bold text-md p-0 m-0">Kigali New</p>
+  <p className="font-bold text-md p-0 m-0">Dawn City</p>
+  <p className="py-4 text-sm text-grey-400">this is how the you hotel<br/>
+   you choosen look like and<br/>
+   you're in the right way to choose<br/>
+   thanks for everything!!!
+  </p>
+  <div className="flex flex-grow gap-8">
+    <input type="button" value="Edit" className="rounded-sm  py-2 px-10 text-white font-bold"
+    style={{backgroundColor:`#008000`,}}/>
+    <input type="button" value="Cancel" className="rounded-sm bg-red-500 py-2 px-6 text-white font-bold"
+    style={{backgroundColor:`#FF0202`,}}
+    />
+  </div>
+</div>
+ </div>
+ </div>
 </main>
   
   );
