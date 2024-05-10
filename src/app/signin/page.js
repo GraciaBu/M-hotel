@@ -1,7 +1,6 @@
 import {url} from "inspector";
 //  import backgroundImage from "unsplash_tYaccl19A3Q.svg";
 
-import ReactDOM from "react-dom/client";
 
 
 export default function signin(){
