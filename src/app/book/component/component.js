@@ -22,13 +22,13 @@ export default function Component({name,rooms,office,bath,kitchen,}){
         <div className="flex flex-row mx-1 gap-1  py-2 text-sm text-slate-400">
           
     
-        <img src="vector.svg" alt="icon" className="align-left"/>
+        <img src="rooms.svg" alt="icon" className="align-left"/>
             <p  className="flex h-5" > {rooms} rooms</p>
-            <img src="vector(1).svg" alt="icon" className="align-left"/>
+            {/* <img src="offices.svg" alt="icon" className="align-left"/> */}
             <p  className="flex  h-5" >{office} offices</p>
-            <img src="vector(3).svg" alt="icon" className="align-left"/>
+            {/* <img src="baths.svg" alt="icon" className="align-left"/> */}
             <p  className="flex  h-5" >{bath} bath</p>
-            <img src="vector(5).svg" alt="icon" className="align-left"/>
+            {/* <img src="kitchen.svg" alt="icon" className="align-left"/> */}
             <p  className="flex  h-5" >{kitchen} kitchen</p></div>
             <div className="flex flex-row mx-5">
             <div className="flex flex-row ltr">
