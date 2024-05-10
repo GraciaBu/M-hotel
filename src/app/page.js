@@ -1,70 +1,86 @@
-"use client"
+import { url } from "inspector";
 import Image from "next/image";
-import Link from "next/link";
-import Router, { useRouter } from "next/navigation";
-import bgImage from '../public/bg.jpg'
-import { v4 as uuidv4 } from 'uuid';
-import Todo from "@/components/Todo";
-import { useState } from "react";
+
 export default function Home() {
-  const data=[
-    {id:uuidv4(),title:'Wake up',finished:false},
-    {id:uuidv4(),title:'Take bath',finished:false},
-    {id:uuidv4(),title:'Breakfast',finished:false}
-
-  ]
-  const [taskToEdit,setTodoEdit]=useState();
-  const [tasks,setTasks]=useState(data);
-  const [title,setTitle]=useState('');
-
-  const handleSubmit = (e) => {
-    // const id = uuidv4();
-    e.preventDefault(); // Prevents the default form submission behavior
-    console.log('console')
-    // Add a new task to the tasks array
-    setTasks([...tasks, {id:tasks.length+1, title: title, finished: false }]);
-
-    // Clear the input field after adding the task
-    setTitle('');
-  }
-  const HandleDelete=(item)=>{
-
-     const updatedTasks=tasks.filter((task)=>task.title!=item.title)
-  
-  setTasks(updatedTasks);
-    }
-
-    const handleEditSubmit=(name)=>{
-      console.log('edit title',name)
-const updatedTasks=tasks.map((task)=> task.id===taskToEdit.id?{...task,title:name}:task);
-setTasks(updatedTasks);
-setTodoEdit(null);
-    }
   return (
-      <div className="grid grid-cols-1 ">
-        {tasks.map((task,index)=>{
-return(
-<>
-  <Todo  
-  task={task}
-  editTodo={()=>setTodoEdit(task)}
-   deleteTodo={()=>HandleDelete(task)}
-   handleEditSubmit={handleEditSubmit}
-   isEditing={taskToEdit&&taskToEdit?.id===task.id}
-    key={index} 
-    name={task.title} status={task.finished?'FINISHED':'ONGOING'}/>
+    <main className="bg-fixed bg-cover h-full"style={{
+      backgroundImage:`url('/home.svg')`,
+       height:`100%`,
+      width:`100%`,
+      backgroundRepeat:`no-repeat`,
+      padding:`34px`
 
 
-  </>
-)
-        })}
+      
+      }}>
+
+      
+<nav className="flex flex-row    py-7 ">
+        <p className="font-bold font-sans text-white h-9 ml-5"> 
+          M-hotel
+          </p>
+          <a href="/signin" className="bg-orange-500 text-white font-sans  w-1/7
+           rounded-md py-2 px-5  ml-auto mr-10 font-bold text-decoration-none">Sign In</a>
+
+  </nav>
+
+  
 
 
-<form onSubmit={handleSubmit}>
-  <input/> 
-  <input className="border p-4 "   onChange={(e)=>{ setTitle(e.target.value)}} name='title' placeholder="enter task title" value={title} />
-  <input type="submit" value="Add Task" className="bg-green-300 p-4 mx-4" />
-  </form>
-      </div>
+<div className="my-20 mx-20 ">
+<p className="font-extrabold font-sans text-white  text-5xl ">Best affordable</p>
+   <p className="font-extrabold font-sans text-white  text-5xl ">accomodations ever!</p>
+</div>
+  <div className="my-12 mx-20">
+  <p className="text-white   font-sm text-2xl">For sure you have made the right choice to</p>
+  <p className=" text-white  text-2xl font-sm "> save your reservation here!</p>
+  </div>
+  
+  <div className=" flex flex-row  gap-10 text-black font-sans h-15 w-5/6   bg-white 
+  rounded-md mx-20 p-5 ">
+    
+<div className=" w-1/4 text-sm font-sans grid grid-col gap-2">
+<p className="font-bold">Type</p>
+<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  py-1 rounded-sm">
+  <option value="1">Motel</option>
+  <option value="2">Hotel</option>
+  <option value="3">bar</option>
+  <option value="4">restaurant</option>
+</select>
+</div>
+<div className=" w-1/4 bg-white grid grid-col-1 gap-2">
+
+<p className="font-bold">Location</p>
+<select className="w-full border border-slate-300 bg-white text-sm  text-slate-400  py-1 rounded-sm">
+
+  <option value="1">Kigali city</option>
+  <option value="2">Bujumbura</option>
+  <option value="3">brazaville</option>
+  <option value="4">paris</option>
+  <option value="5">mombasa city</option>
+  <option value="6">nairobi city</option>
+</select>
+</div>
+<div className=" w-1/4 bg-white grid grid-col-1 gap-2 ">
+
+<p className="font-bold">Check In:</p>
+<div className="w-full border border-slate-300 bg-white text-sm flex flex-row gap-2 text-slate-400  py-1 rounded-sm">
+<input type="date" name="date" className="align-item-start"/>
+</div>
+</div>
+<div className=" w-1/4 bg-white grid grid-col-1 gap-2 ">
+
+<p className=" font-bold ">Check Out:</p>
+<div className="w-full border border-slate-300 bg-white text-sm flex flex-row gap-2 text-slate-400  py-1 rounded-sm">
+<input type="date" name="date" className="align-item-start"/>
+</div>
+</div>
+
+<button className="bg-orange-600 p-4 rounded-md w-1/4 font-bold text-white">Search</button>
+  </div>
+  
+  
+  </main>
   );
 }
+
